@@ -1,0 +1,28 @@
+
+    <h3><a  href="/employee">Create new User</a></h3>
+   
+   <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>company</th>
+            <th>Age</th>
+            <th>State</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.company}}</td>
+            <td>{{this.age}}</td>
+            <td>{{this.state}}</td>
+            <td>
+                <a href="/employee/{{this._id}}">Edit</a>
+                <a href="/employee/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');">Delete</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
